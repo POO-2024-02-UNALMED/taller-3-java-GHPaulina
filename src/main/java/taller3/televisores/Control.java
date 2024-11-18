@@ -1,68 +1,66 @@
 package taller3.televisores;
 
 public class Control {
+	    private TV tv;
 
-	    private TV televisor;
+	    public void enlazar(TV tv) {
+	        this.tv = tv;
+	        tv.setControl(this);
+	    }
 
-	    public void enlazar(TV televisor) {
-	        this.televisor = televisor;
-	        televisor.setControl(this);
+	    public TV getTv() {
+	        return this.tv;
+	    }
+
+	    public void setTv(TV tv) {
+	        this.tv = tv;
 	    }
 
 	    public void turnOn() {
-	        if (televisor != null) {
-	            televisor.turnOn();
+	        if (tv != null) {
+	            tv.turnOn();
 	        }
 	    }
 
 	    public void turnOff() {
-	        if (televisor != null) {
-	            televisor.turnOff();
+	        if (tv != null) {
+	            tv.turnOff();
 	        }
 	    }
 
 	    public void canalUp() {
-	        if (televisor != null) {
-	            televisor.canalUp();
+	        if (tv != null) {
+	            tv.canalUp();
 	        }
 	    }
 
 	    public void canalDown() {
-	        if (televisor != null) {
-	            televisor.canalDown();
+	        if (tv != null) {
+	            tv.canalDown();
 	        }
 	    }
 
 	    public void volumenUp() {
-	        if (televisor != null) {
-	            televisor.volumenUp();
+	        if (tv != null) {
+	            tv.volumenUp();
 	        }
 	    }
 
 	    public void volumenDown() {
-	        if (televisor != null) {
-	            televisor.volumenDown();
+	        if (tv != null) {
+	            tv.volumenDown();
 	        }
 	    }
 
 	    public void setCanal(int canal) {
-	        if (televisor != null) {
-	            televisor.setCanal(canal);
+	        if (tv != null) {
+	            tv.setCanal(canal);
 	        }
 	    }
 
 	    public void setVolumen(int volumen) {
-	        if (televisor != null) {
-	            televisor.setVolumen(volumen);
+	        if (tv != null) {
+	            tv.setVolumen(volumen);
 	        }
 	    }
-
-	    public TV getTelevisor() {
-	        return televisor;
-	    }
-
-	    public void setTelevisor(TV televisor) {
-	        this.televisor = televisor;
-	    }
 	}
-
