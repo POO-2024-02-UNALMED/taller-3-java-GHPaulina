@@ -3,16 +3,19 @@ package taller3.televisores;
 public class TV {
 
 	    private Marca marca;
-	    private int canal = 1;
-	    private int precio = 500;
+	    private int canal;
+	    private int precio;
 	    private boolean estado;
-	    private int volumen = 1;
-	    private Control control;
+	    private int volumen;
 	    private static int numTV = 0;
+	    private Control control;
 
 	    public TV(Marca marca, boolean estado) {
 	        this.marca = marca;
 	        this.estado = estado;
+	        this.canal = 1;
+	        this.volumen = 1;
+	        this.precio = 500;
 	        numTV++;
 	    }
 
@@ -20,16 +23,16 @@ public class TV {
 	        return numTV;
 	    }
 
-	    public static void setNumTV(int num) {
-	        numTV = num;
+	    public static void setNumTV(int numTV) {
+	        TV.numTV = numTV;
 	    }
 
 	    public void turnOn() {
-	        estado = true;
+	        this.estado = true;
 	    }
 
 	    public void turnOff() {
-	        estado = false;
+	        this.estado = false;
 	    }
 
 	    public void canalUp() {
@@ -72,10 +75,6 @@ public class TV {
 	        return volumen;
 	    }
 
-	    public Control getControl() {
-	        return control;
-	    }
-
 	    public boolean getEstado() {
 	        return estado;
 	    }
@@ -84,9 +83,9 @@ public class TV {
 	        this.marca = marca;
 	    }
 
-	    public void setCanal(int nuevoCanal) {
-	        if (estado && nuevoCanal >= 1 && nuevoCanal <= 120) {
-	            canal = nuevoCanal;
+	    public void setCanal(int canal) {
+	        if (estado && canal >= 1 && canal <= 120) {
+	            this.canal = canal;
 	        }
 	    }
 
@@ -94,10 +93,14 @@ public class TV {
 	        this.precio = precio;
 	    }
 
-	    public void setVolumen(int nuevoVolumen) {
-	        if (estado && nuevoVolumen >= 0 && nuevoVolumen <= 7) {
-	            volumen = nuevoVolumen;
+	    public void setVolumen(int volumen) {
+	        if (estado && volumen >= 0 && volumen <= 7) {
+	            this.volumen = volumen;
 	        }
+	    }
+
+	    public Control getControl() {
+	        return control;
 	    }
 
 	    public void setControl(Control control) {
